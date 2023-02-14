@@ -32,6 +32,7 @@ public class MappingController {
 
     /**
      * 편리한 축약 애노테이션 (코드보기)
+     *
      * @GetMapping
      * @PostMapping
      * @PutMapping
@@ -47,6 +48,7 @@ public class MappingController {
     /**
      * PathVariable 사용
      * 변수명이 같으면 생략 가능
+     *
      * @PathVariable("userId") String userId -> @PathVariable userId
      */
     @GetMapping("/mapping/{userId}")
@@ -59,8 +61,7 @@ public class MappingController {
      * PathVariable 사용 다중
      */
     @GetMapping("/mapping/users/{userId}/orders/{orderId}")
-    public String mappingPath(@PathVariable String userId, @PathVariable Long
-            orderId) {
+    public String mappingPath(@PathVariable String userId, @PathVariable Long orderId) {
         log.info("mappingPath userId={}, orderId={}", userId, orderId);
         return "ok";
     }
